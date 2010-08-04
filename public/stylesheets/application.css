@@ -1,0 +1,53 @@
+h1,h2,h3,h4,h5,h6 { margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nobile', sans-serif;
+  margin: 0;
+  padding: 0;
+
+  background: #222;
+}
+
+#page {
+  width: 900px;
+  margin: 40px auto;
+  padding: 10px;
+
+  background: #fff;
+  color: #222;
+}
+
+#page h1 {
+  border-bottom: 1px solid #bfbfbf;
+}
+
+table {
+  margin: 0.5em;
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.3em 0.6em;
+  
+  cursor: pointer;
+
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e9e9e9), to(#d0d0d0));
+  -webkit-box-shadow: 1px 1px 4px #aaa;
+
+  -webkit-border-radius: 5px;
+  border: 1px solid #e9e9e9;
+}
+
+.button:hover {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f9f9f9), to(#ddd));
+}
+
+.button a {
+  color: #454545;
+  text-decoration: none;
+}

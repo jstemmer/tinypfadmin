@@ -1,4 +1,5 @@
 Tinypfadmin::Application.routes.draw do
+  resources :domains
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +49,7 @@ Tinypfadmin::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  root :to => "domains#index"
 
   # See how all your routes lay out with "rake routes"
 
