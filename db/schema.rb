@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100804190806) do
+ActiveRecord::Schema.define(:version => 20100806115140) do
 
   create_table "aliases", :force => true do |t|
     t.integer  "user_id"
@@ -19,11 +19,15 @@ ActiveRecord::Schema.define(:version => 20100804190806) do
     t.datetime "updated_at"
   end
 
+  add_index "aliases", ["alias"], :name => "index_aliases_on_alias", :unique => true
+
   create_table "domains", :force => true do |t|
     t.string   "domain"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "domains", ["domain"], :name => "index_domains_on_domain", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "login"
@@ -32,5 +36,7 @@ ActiveRecord::Schema.define(:version => 20100804190806) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "users", ["login"], :name => "index_users_on_login", :unique => true
 
 end
