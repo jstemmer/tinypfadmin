@@ -11,23 +11,85 @@ body {
 #page {
   width: 900px;
   margin: 40px auto;
-  padding: 10px;
+}
+
+#tabs {
+}
+
+#tabs a {
+  display: inline-block;
+
+  line-height: 36px;
+  padding: 0.1em 1em 0 1em;
+  margin: 0 0.5em 0 0;
+
+  -webkit-border-radius: 5px 5px 0 0;
+
+  background: #777;
+  color: #eee;
+}
+
+#tabs a:hover {
+}
+
+#tabs a.selected {
+  background: #fff;
+  color: #222;
+}
+
+#tabs a.selected:hover {
+}
+
+#content {
+  padding: 20px;
 
   background: #fff;
   color: #222;
 }
 
-#page h1 {
+#content h1 {
+  font-family: sans-serif;
   border-bottom: 1px solid #bfbfbf;
+  margin-bottom: 0.5em;
 }
 
+a {
+  text-decoration: none;
+  color: #445;
+  font-size: 11pt;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #505090;
+}
+
+
 table {
-  margin: 0.5em;
+  margin: 0em;
   width: 100%;
 }
 
 th {
   text-align: left;
+  padding: 0.2em;
+}
+
+.icon {
+  width: 18px;
+  padding: 0;
+}
+
+td {
+  padding: 0.2em;
+}
+
+td.link {
+  width: 50px;
+}
+
+.right {
+  float: right;
 }
 
 .button {

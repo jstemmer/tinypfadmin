@@ -10,7 +10,15 @@
   </head>
   <body>
     <div id="page">
-      <%= yield %>
+      <div id="tabs">
+        <%= link_to 'Domains', domains_path, :class => 'selected' %>
+        <%= link_to 'Users', '/' %>
+        <%= link_to 'Aliases', '/' %>
+      </div>
+      <div id="content">
+        <%= yield %>
+        <div style="clear: both;" />
+      </div>
     </div>
   </body>
 </html>
