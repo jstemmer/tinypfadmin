@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
+    <%= f.label :user %><br />
+    <%= f.select :user_id, User.all.collect { |u| [u.login, u.id] } %>
   </div>
   <div class="field">
     <%= f.label :alias %><br />

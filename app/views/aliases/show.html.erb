@@ -2,7 +2,7 @@
 
 <p>
   <b>User:</b>
-  <%= @alias.user_id %>
+  <%= @alias.user.login %>
 </p>
 
 <p>
@@ -10,6 +10,6 @@
   <%= @alias.alias %>
 </p>
 
-
-<%= link_to 'Edit', edit_alias_path(@alias) %> |
-<%= link_to 'Back', aliases_path %>
+<div class="button right">
+  <%= link_to 'Edit alias', edit_alias_path(@alias) %>
+</div>

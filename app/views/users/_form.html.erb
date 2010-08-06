@@ -20,7 +20,7 @@
     <% unless @user.password.blank? %>
       <span class="small">(leave empty to preserve password)</span>
     <% end %><br />
-    <%= f.text_field :password, :value => "" %>
+    <%= text_field_tag :password %>
   </div>
   <div class="field">
     <%= f.label :active %><br />
