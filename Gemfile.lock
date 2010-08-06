@@ -40,6 +40,7 @@ GEM
       mime-types
       treetop (>= 1.4.5)
     mime-types (1.16)
+    mysql (2.8.1)
     nokogiri (1.4.3.1)
     polyglot (0.3.1)
     rack (1.2.1)
@@ -86,6 +87,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  mysql (= 2.8.1)
   rails (= 3.0.0.rc)
   rspec (>= 2.0.0.beta.19)
   rspec-rails (>= 2.0.0.beta.19)
