@@ -6,6 +6,10 @@ class User < ActiveRecord::Base
 
   has_many :aliases
 
+  def is_active?
+    self.active
+  end
+
   def login_domain
     self.login.split('@').last if self.login && self.login.include?('@')
   end

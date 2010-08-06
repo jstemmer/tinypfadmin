@@ -1,4 +1,8 @@
 Tinypfadmin::Application.routes.draw do
+  resources :aliases
+
+  resources :users
+
   resources :domains
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -89,6 +89,10 @@ th {
   padding: 0;
 }
 
+.icon img {
+  margin-bottom: -2px;
+}
+
 td {
   padding: 0.2em;
 }

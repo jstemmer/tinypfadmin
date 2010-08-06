@@ -12,8 +12,8 @@
     <div id="page">
       <div id="tabs">
         <%= link_to 'Domains', domains_path, :class => tab_class("domains") %>
-        <%= link_to 'Users', '/', :class => tab_class("users") %>
-        <%= link_to 'Aliases', '/', :class => tab_class("aliases") %>
+        <%= link_to 'Users', users_path, :class => tab_class("users") %>
+        <%= link_to 'Aliases', aliases_path, :class => tab_class("aliases") %>
       </div>
       <div id="content">
         <%= yield %>

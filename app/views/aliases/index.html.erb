@@ -1,0 +1,26 @@
+<h1>Listing aliases</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Alias</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @aliases.each do |a| %>
+  <tr>
+    <td><%= link_to a.user.login, a.user %></td>
+    <td><%= link_to a.alias, a %></td>
+    <td class="link"><%= link_to 'Edit', edit_alias_path(a) %></td>
+    <td class="link"><%= link_to 'Destroy', a, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<div class="button right">
+  <%= link_to 'New Alias', new_alias_path %>
+</div>
