@@ -44,7 +44,7 @@ class AliasesController < ApplicationController
 
     respond_to do |format|
       if @alias.save
-        format.html { redirect_to(@alias, :notice => 'Alias was successfully created.') }
+        format.html { redirect_to(aliases_url, :notice => 'Alias was successfully created.') }
         format.xml  { render :xml => @alias, :status => :created, :location => @alias }
       else
         format.html { render :action => "new" }
@@ -60,7 +60,7 @@ class AliasesController < ApplicationController
 
     respond_to do |format|
       if @alias.update_attributes(params[:alias])
-        format.html { redirect_to(@alias, :notice => 'Alias was successfully updated.') }
+        format.html { redirect_to(aliases_url, :notice => 'Alias was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
