@@ -7,11 +7,11 @@ class User < ActiveRecord::Base
   has_many :aliases
 
   def login_domain
-    login.split('@').last if login && login.include?('@')
+    self.login.split('@').last if self.login && self.login.include?('@')
   end
   
   def login_name
-    login.split('@').first if login && login.include?('@')
+    self.login.split('@').first if self.login && self.login.include?('@')
   end
 
   def login_domain_exists
