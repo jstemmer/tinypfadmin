@@ -15,6 +15,12 @@
         <%= link_to 'Users', users_path, :class => tab_class("users") %>
         <%= link_to 'Aliases', aliases_path, :class => tab_class("aliases") %>
       </div>
+      <% if flash[:notice] || flash[:error] %>
+        <div id="flash" class="<%= flash[:error].nil? ? "notice" : "error" %>">
+          <%= flash[:notice] || flash[:error] %>
+          <div class="right"><a href="#" onclick="$('#flash').slideUp(); return false;">[hide]</a></div>
+        </div>
+      <% end %>
       <div id="content">
         <%= yield %>
         <div style="clear: both;" />
