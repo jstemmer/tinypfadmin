@@ -126,3 +126,7 @@ td.link {
   color: #454545;
   text-decoration: none;
 }
+
+.small {
+  font-size: 8pt;
+}

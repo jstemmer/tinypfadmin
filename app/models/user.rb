@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   has_many :aliases
 
+  attr_protected :password
+
   def is_active?
     self.active
   end

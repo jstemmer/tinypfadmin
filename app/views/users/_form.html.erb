@@ -16,8 +16,11 @@
     <%= f.text_field :login %>
   </div>
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.text_field :password %>
+    <%= f.label :password %> 
+    <% unless @user.password.blank? %>
+      <span class="small">(leave empty to preserve password)</span>
+    <% end %><br />
+    <%= f.text_field :password, :value => "" %>
   </div>
   <div class="field">
     <%= f.label :active %><br />

@@ -3,7 +3,9 @@ require 'spec_helper'
 describe Alias do
   before(:each) do
     Domain.create(:domain => "example.com")
-    user = User.create(:login => "user@example.com", :password => "example")
+    user = User.new(:login => "user@example.com")
+    user.password = "example"
+    user.save
 
     @alias = user.aliases.new(:alias => "mail@example.com")
   end

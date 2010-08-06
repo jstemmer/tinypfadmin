@@ -3,7 +3,8 @@ require 'spec_helper'
 describe User do
   before(:each) do
     Domain.create(:domain => "example.com")
-    @user = User.new(:login => "user@example.com", :password => "example")
+    @user = User.new(:login => "user@example.com")
+    @user.password = "example"
   end
 
   it "should return the domain part of the login name" do
@@ -12,6 +13,11 @@ describe User do
 
   it "should return the user part of the login name" do
     @user.login_name.should == "user"
+  end
+
+  it "should not automatically set the password field when creating from attributes" do
+    @user = User.new(:login => "user@example.com", :password => "test")
+    @user.password.should be_nil
   end
 
   context "a new user" do
