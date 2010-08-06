@@ -11,14 +11,17 @@
   <body>
     <div id="page">
       <div id="tabs">
-        <%= link_to 'Domains', domains_path, :class => 'selected' %>
-        <%= link_to 'Users', '/' %>
-        <%= link_to 'Aliases', '/' %>
+        <%= link_to 'Domains', domains_path, :class => tab_class("domains") %>
+        <%= link_to 'Users', '/', :class => tab_class("users") %>
+        <%= link_to 'Aliases', '/', :class => tab_class("aliases") %>
       </div>
       <div id="content">
         <%= yield %>
         <div style="clear: both;" />
       </div>
+    </div>
+    <div id="footer">
+      <a href="#">tinypfadmin v0.1</a>
     </div>
   </body>
 </html>
