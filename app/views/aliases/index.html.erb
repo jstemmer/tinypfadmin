@@ -2,8 +2,8 @@
 
 <table>
   <tr>
-    <th>User</th>
     <th>Alias</th>
+    <th>User</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,8 +11,8 @@
 
 <% @aliases.each do |a| %>
   <tr>
-    <td><%= link_to a.user.login, a.user %></td>
     <td><%= a.alias %></td>
+    <td><%= link_to a.user.login, a.user %></td>
     <td class="link"><%= link_to 'Edit', edit_alias_path(a) %></td>
     <td class="link"><%= link_to 'Destroy', a, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
