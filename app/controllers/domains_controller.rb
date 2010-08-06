@@ -2,7 +2,7 @@ class DomainsController < ApplicationController
   # GET /domains
   # GET /domains.xml
   def index
-    @domains = Domain.all
+    @domains = Domain.order(:domain).all
 
     respond_to do |format|
       format.html # index.html.erb

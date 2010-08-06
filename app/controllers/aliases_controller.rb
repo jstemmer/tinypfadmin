@@ -2,7 +2,7 @@ class AliasesController < ApplicationController
   # GET /aliases
   # GET /aliases.xml
   def index
-    @aliases = Alias.all
+    @aliases = Alias.order(:alias).all
 
     respond_to do |format|
       format.html # index.html.erb
