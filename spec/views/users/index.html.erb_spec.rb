@@ -19,7 +19,5 @@ describe "users/index.html.erb" do
   it "renders a list of users" do
     render
     rendered.should have_selector("tr>td", :content => "Login".to_s, :count => 2)
-    rendered.should have_selector("tr>td", :content => "Password".to_s, :count => 2)
-    rendered.should have_selector("tr>td", :content => false.to_s, :count => 2)
   end
 end
