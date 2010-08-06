@@ -10,6 +10,10 @@ class User < ActiveRecord::Base
     self.active
   end
 
+  def password=(pwd)
+    write_attribute(:password, mysql_encrypt(pwd))
+  end
+
   def login_domain
     self.login.split('@').last if self.login && self.login.include?('@')
   end
@@ -20,5 +24,12 @@ class User < ActiveRecord::Base
 
   def login_domain_exists
     errors.add(:login, 'uses an unknown domain') unless Domain.exists?(:domain => self.login_domain)
+  end
+
+  private
+
+  def mysql_encrypt(pwd)
+    salt = ActiveSupport::SecureRandom.hex(4)
+    pwd.crypt(salt) unless pwd.nil?
   end
 end
