@@ -47,6 +47,10 @@ describe User do
   end
 
   context "an existing user" do
+    it "should not be edited if it has aliases" do
+      pending
+    end
+
     it "should not be deleted if it has aliases" do
       pending
     end

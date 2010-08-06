@@ -47,6 +47,10 @@ describe Domain do
       @domain.domain.should == 'example.com'
     end
 
+    it "should not be changed while it has users or aliases" do
+      pending
+    end
+
     it "should not be deleted while it has users or aliases" do
       pending
     end
