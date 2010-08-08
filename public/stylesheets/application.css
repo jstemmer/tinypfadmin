@@ -33,6 +33,8 @@ body {
   margin: 0 0.5em 0 0;
 
   -webkit-border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
 
   background: #777;
   color: #eee;
@@ -130,15 +132,25 @@ td.link {
   
   cursor: pointer;
 
+  background: #dbdbdb;
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e9e9e9), to(#d0d0d0));
+  background: -moz-linear-gradient(top, #e9e9e9, #d0d0d0);
+
   -webkit-box-shadow: 1px 1px 4px #aaa;
+  -moz-box-shadow: 1px 1px 4px #aaa;
+  box-shadow: 1px 1px 4px #aaa;
 
   -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+
   border: 1px solid #e9e9e9;
 }
 
 .button:hover {
+  background: #e6e6e6;
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f9f9f9), to(#ddd));
+  background: -moz-linear-gradient(top, #f9f9f9, #ddd);
 }
 
 .button a {
