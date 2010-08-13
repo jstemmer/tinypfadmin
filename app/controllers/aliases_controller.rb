@@ -25,6 +25,7 @@ class AliasesController < ApplicationController
   # GET /aliases/new.xml
   def new
     @alias = Alias.new
+    @users = User.all.collect { |u| [u.login, u.id] }
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +36,7 @@ class AliasesController < ApplicationController
   # GET /aliases/1/edit
   def edit
     @alias = Alias.find(params[:id])
+    @users = User.all.collect { |u| [u.login, u.id] }
   end
 
   # POST /aliases
