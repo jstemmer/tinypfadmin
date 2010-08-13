@@ -15,7 +15,7 @@ describe "users/new.html.erb" do
 
     rendered.should have_selector("form", :action => users_path, :method => "post") do |form|
       form.should have_selector("input#user_login", :name => "user[login]")
-      form.should have_selector("input#user_password", :name => "user[password]")
+      form.should have_selector("input#password", :name => "password")
       form.should have_selector("input#user_active", :name => "user[active]")
     end
   end
