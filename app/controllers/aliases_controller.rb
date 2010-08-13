@@ -2,7 +2,7 @@ class AliasesController < ApplicationController
   # GET /aliases
   # GET /aliases.xml
   def index
-    @aliases = Alias.order(:alias).all
+    @aliases = Alias.joins(:user).order(:login, :alias).select("aliases.*, users.login").all
 
     respond_to do |format|
       format.html # index.html.erb

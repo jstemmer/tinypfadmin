@@ -8,10 +8,11 @@ describe AliasesController do
 
   describe "GET index" do
     it "assigns all aliases as @aliases" do
-      @aliases = mock(Object)
-      @aliases.stub(:all) { [mock_alias] }
+      Alias.stub(:joins).and_return(Alias)
+      Alias.stub(:order).and_return(Alias)
+      Alias.stub(:select).and_return(Alias)
 
-      Alias.stub(:order).and_return(@aliases)
+      Alias.stub(:all) { [mock_alias] }
       get :index
       assigns(:aliases).should eq([mock_alias])
     end

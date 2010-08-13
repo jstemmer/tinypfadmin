@@ -12,7 +12,7 @@
 <% @aliases.each do |a| %>
   <tr>
     <td><%= a.alias %></td>
-    <td><%= link_to a.user.login, a.user %></td>
+    <td><%= link_to a.login, user_path(a.user_id) %></td>
     <td class="link"><%= link_to 'Edit', edit_alias_path(a) %></td>
     <td class="link"><%= link_to 'Destroy', a, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
