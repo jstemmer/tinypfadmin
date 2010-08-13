@@ -8,7 +8,10 @@ describe AliasesController do
 
   describe "GET index" do
     it "assigns all aliases as @aliases" do
-      Alias.stub(:all) { [mock_alias] }
+      @aliases = mock(Object)
+      @aliases.stub(:all) { [mock_alias] }
+
+      Alias.stub(:order).and_return(@aliases)
       get :index
       assigns(:aliases).should eq([mock_alias])
     end
@@ -50,7 +53,7 @@ describe AliasesController do
       it "redirects to the created alias" do
         Alias.stub(:new) { mock_alias(:save => true) }
         post :create, :alias => {}
-        response.should redirect_to(alias_url(mock_alias))
+        response.should redirect_to(aliases_url)
       end
     end
 
@@ -88,7 +91,7 @@ describe AliasesController do
       it "redirects to the alias" do
         Alias.stub(:find) { mock_alias(:update_attributes => true) }
         put :update, :id => "1"
-        response.should redirect_to(alias_url(mock_alias))
+        response.should redirect_to(aliases_url)
       end
     end
 
