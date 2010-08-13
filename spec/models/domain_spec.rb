@@ -39,6 +39,11 @@ describe Domain do
       @domain.domain = 'com'
       @domain.should_not be_valid
     end
+
+    it "should allow subdomains" do
+      @domain.domain = 'subdomain.example.com'
+      @domain.should be_valid
+    end
   end
 
   context "an existing domain" do
