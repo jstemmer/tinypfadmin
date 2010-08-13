@@ -8,7 +8,10 @@ describe UsersController do
 
   describe "GET index" do
     it "assigns all users as @users" do
-      User.stub(:all) { [mock_user] }
+      @users = mock(Object)
+      @users.stub(:all) { [mock_user] }
+
+      User.stub(:order).and_return(@users)
       get :index
       assigns(:users).should eq([mock_user])
     end
@@ -50,7 +53,7 @@ describe UsersController do
       it "redirects to the created user" do
         User.stub(:new) { mock_user(:save => true) }
         post :create, :user => {}
-        response.should redirect_to(user_url(mock_user))
+        response.should redirect_to(users_url)
       end
     end
 
@@ -88,7 +91,7 @@ describe UsersController do
       it "redirects to the user" do
         User.stub(:find) { mock_user(:update_attributes => true) }
         put :update, :id => "1"
-        response.should redirect_to(user_url(mock_user))
+        response.should redirect_to(users_url)
       end
     end
 
