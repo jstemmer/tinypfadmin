@@ -8,10 +8,9 @@ describe DomainsController do
 
   describe "GET index" do
     it "assigns all domains as @domains" do
-      @domains = mock(Object)
-      @domains.stub(:all) { [mock_domain] }
+      Domain.stub(:order).and_return(Domain)
 
-      Domain.stub(:order).and_return(@domains)
+      Domain.stub(:all) { [mock_domain] }
       get :index
       assigns(:domains).should eq([mock_domain])
     end

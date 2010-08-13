@@ -8,10 +8,9 @@ describe UsersController do
 
   describe "GET index" do
     it "assigns all users as @users" do
-      @users = mock(Object)
-      @users.stub(:all) { [mock_user] }
+      User.stub(:order).and_return(User)
 
-      User.stub(:order).and_return(@users)
+      User.stub(:all) { [mock_user] }
       get :index
       assigns(:users).should eq([mock_user])
     end
