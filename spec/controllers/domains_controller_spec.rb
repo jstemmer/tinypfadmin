@@ -8,7 +8,10 @@ describe DomainsController do
 
   describe "GET index" do
     it "assigns all domains as @domains" do
-      Domain.stub(:all) { [mock_domain] }
+      @domains = mock(Object)
+      @domains.stub(:all) { [mock_domain] }
+
+      Domain.stub(:order).and_return(@domains)
       get :index
       assigns(:domains).should eq([mock_domain])
     end
@@ -50,7 +53,7 @@ describe DomainsController do
       it "redirects to the created domain" do
         Domain.stub(:new) { mock_domain(:save => true) }
         post :create, :domain => {}
-        response.should redirect_to(domain_url(mock_domain))
+        response.should redirect_to(domains_url)
       end
     end
 
@@ -88,7 +91,7 @@ describe DomainsController do
       it "redirects to the domain" do
         Domain.stub(:find) { mock_domain(:update_attributes => true) }
         put :update, :id => "1"
-        response.should redirect_to(domain_url(mock_domain))
+        response.should redirect_to(domains_url)
       end
     end
 
